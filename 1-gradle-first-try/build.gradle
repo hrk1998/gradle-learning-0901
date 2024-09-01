@@ -1,8 +1,34 @@
-task helloWorld << {
+// 在configaration阶段，创建一个空白的helloWorld的task，然后运行这个task的闭包进行初始化配置
+task helloWorld {
     println "Hello World!"
 }
 
 task copyFile(type: Copy) {
     from 'xml'
     into 'destination'
+}
+
+task('testDemo1', {
+    println "testDemo1"
+})
+
+task('testDemo2') {
+    println "testDemo2"
+}
+
+task 'testDemo3' {
+    println "testDemo3"
+}
+
+
+task testDemo4 {
+    println "testDemo4"
+}
+
+task testDemo5 {
+    println "testDemo5"
+
+    doLast {
+        println "testDemo5.doLast"
+    }
 }
